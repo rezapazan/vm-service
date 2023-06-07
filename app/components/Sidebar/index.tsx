@@ -33,7 +33,7 @@ const menuItems: SidebarItems = [
   {
     name: 'Volume',
     icon: <Icons.DirectboxDefault size={17} />,
-    href: '#',
+    href: '/volume',
     disabled: true,
   },
 ]
@@ -77,7 +77,7 @@ const supportItems: SidebarItems = [
 
 const Sidebar = () => {
   return (
-    <aside className='fixed flex h-full w-[248px] flex-col items-start  justify-between overflow-auto border-r border-gray-300 bg-white px-[30px] pb-24'>
+    <aside className='fixed flex h-full w-[248px] flex-col items-start justify-between overflow-auto  border-r border-gray-300 bg-white px-[30px] pb-5 pt-[75px] text-[#0D2D51]'>
       <div className='w-full'>
         <div className='border-b border-gray-300 pb-5 pt-7'>
           {menuItems.map(item => (
