@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang='en'>
       <body
         suppressHydrationWarning={true}
-        className='h-[90vh]'
+        className=''
       >
         <Navbar />
         <div className='flex h-full'>
