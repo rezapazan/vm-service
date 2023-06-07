@@ -1,15 +1,21 @@
+import { UseActiveLink } from '@/types'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 
-export const useActiveLink = (href: string) => {
+export const useActiveLink: UseActiveLink = href => {
   const pathname = usePathname()
-  const [activeClassName, setActiveClassName] = useState<string>()
+  const [isPending, startTransition] = useTransition()
+  const [activeClassName, setActiveClassName] = useState<string>('')
 
   useEffect(() => {
     pathname === href
-      ? setActiveClassName('bg-[#2C5EFF] text-white')
-      : setActiveClassName('bg-transparent text-[#0D2D51]')
+      ? startTransition(() => {
+          setActiveClassName('bg-[#2C5EFF] text-white')
+        })
+      : startTransition(() => {
+          setActiveClassName('bg-transparent text-[#0D2D51]')
+        })
   }, [href, pathname])
 
-  return activeClassName
+  return [activeClassName, isPending]
 }

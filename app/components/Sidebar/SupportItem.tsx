@@ -3,7 +3,6 @@
 import { useActiveLink } from '@/hooks'
 import { SidebarItem } from '@/types'
 import Link from 'next/link'
-import React from 'react'
 
 const SupportItem = ({ name, icon, href }: SidebarItem) => {
   const activeClassName = useActiveLink(href)
