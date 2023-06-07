@@ -13,9 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body suppressHydrationWarning={true}>
+      <body
+        suppressHydrationWarning={true}
+        className='scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 scrollbar-thumb-rounded'
+      >
         <Navbar />
-        <div className='flex h-full'>
+        <div className='flex h-full w-full'>
           <Sidebar />
           {children}
         </div>
