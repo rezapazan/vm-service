@@ -2,6 +2,7 @@ import { UseActiveLink } from '@/types'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, useTransition } from 'react'
 
+// TODO: handle initial build bug
 export const useActiveLink: UseActiveLink = href => {
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()

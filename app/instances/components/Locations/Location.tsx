@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Instance = ({ name, imageURL }: { name: string; imageURL: string }) => {
+const Location = ({ name, imageURL }: { name: string; imageURL: string }) => {
   return (
     <div className='flex h-32 w-60 flex-col items-center justify-center rounded-[7px] bg-white'>
       <Image
@@ -16,4 +16,4 @@ const Instance = ({ name, imageURL }: { name: string; imageURL: string }) => {
   )
 }
 
-export default Instance
+export default Location
