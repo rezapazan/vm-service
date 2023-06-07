@@ -1,0 +1,99 @@
+@layer base {
+  // IBM Plex Sans
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/Thin.ttf');
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/ExtraLight.ttf');
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/Light.ttf');
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/Regular.ttf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/Medium.ttf');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/SemiBold.ttf');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../assets/fonts/IBM\ Plex\ Sans/Bold.ttf');
+    font-weight: 700;
+  }
+
+  // HK Grotesk
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Thin.ttf');
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/ExtraLight.ttf');
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Light.ttf');
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Regular.ttf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Medium.ttf');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/SemiBold.ttf');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Bold.ttf');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/ExtraBold.ttf');
+    font-weight: 800;
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('../assets/fonts/HK\ Grotesk/Black.ttf');
+    font-weight: 900;
+  }
+}
