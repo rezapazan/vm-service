@@ -3,6 +3,7 @@ import { Dispatch, createContext, useContext } from 'react'
 
 export const instanceInitialState: Instance = {
   location: {
+    id: 0,
     name: '',
     flag: '',
   },
@@ -16,10 +17,5 @@ export const instanceInitialState: Instance = {
 
 export const InstancesContext = createContext<
   [Instance, Dispatch<InstanceActions>]
->([
-  instanceInitialState,
-  () => {
-    return
-  },
-])
+>([instanceInitialState, () => {}])
 export const useInstance = () => useContext(InstancesContext)

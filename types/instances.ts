@@ -1,5 +1,5 @@
 export type Location = {
-  id?: number
+  id: number
   name: string
   flag: string
 }
@@ -24,7 +24,7 @@ export type InstanceActions =
       payload: Type
     }
   | {
-      type: 'SET_Location'
+      type: 'SET_LOCATION'
       payload: Location
     }
   | { type: 'SET_STEP'; payload: { step: Step } }

@@ -1,5 +1,6 @@
 'use client'
 
+import { useInstance } from '@/context/instances/instancesContext'
 // import { useActiveLink } from '@/hooks'
 import { SidebarItem } from '@/types'
 import Link from 'next/link'
@@ -9,7 +10,7 @@ import React, { useEffect, useState, useTransition } from 'react'
 const Item = ({ name, icon, href, disabled }: SidebarItem) => {
   // TODO: make this logic a hook?
   const pathname = usePathname()
-  const [isPending, startTransition] = useTransition()
+  const [, startTransition] = useTransition()
   const [activeClassName, setActiveClassName] = useState<string>('')
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const Item = ({ name, icon, href, disabled }: SidebarItem) => {
         })
   }, [href, pathname])
 
-  return disabled || isPending ? (
+  return disabled ? (
     <button
       disabled
       className={`mb-1 flex h-10 w-full items-center rounded px-[22px] font-plex text-sm font-medium text-[#E3E4E6]`}
