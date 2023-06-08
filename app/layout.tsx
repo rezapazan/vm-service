@@ -1,6 +1,5 @@
 import Sidebar from '@/app/components/Sidebar'
 import Navbar from '@/app/components/Navbar'
-import { ToastContainer } from 'react-toastify'
 import '../styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -24,18 +23,6 @@ export default function RootLayout({
           <Sidebar />
           {children}
         </div>
-        <ToastContainer
-          position='bottom-center'
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme='light'
-        />
       </body>
     </html>
   )

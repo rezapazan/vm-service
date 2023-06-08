@@ -2,7 +2,7 @@
 
 import { ArrowLeft2, ArrowRight2 } from 'iconsax-react'
 import React, { PropsWithChildren } from 'react'
-import { toast } from 'react-toastify'
+import { Bounce, Slide, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Stepper from './components/Stepper'
 
@@ -39,6 +39,19 @@ const InstancesLayout = ({ children }: PropsWithChildren) => {
           </button>
         </div>
       </div>
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+        transition={Slide}
+      />
     </main>
   )
 }
