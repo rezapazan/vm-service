@@ -1,7 +1,5 @@
 'use client'
 
-import { useInstance } from '@/context/instances/instancesContext'
-// import { useActiveLink } from '@/hooks'
 import { SidebarItem } from '@/types'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
