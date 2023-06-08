@@ -1,12 +1,11 @@
 import React from 'react'
 import Location from './Location'
-import { ArrowRight2 } from 'iconsax-react'
 import { Location as LocationType } from '@/types'
 
 const getLocations = async () => {
   const locations = await fetch(
     'https://my-json-server.typicode.com/rezapazan/vm-service/locations',
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 10 } }
   )
 
   return locations.json()
@@ -29,12 +28,6 @@ const Index = async () => {
             id={location.id}
           />
         ))}
-      </div>
-      <div className='flex items-center justify-end'>
-        <button className='flex h-10 w-28 items-center justify-around rounded bg-[#FAC802]'>
-          <span className='mr-1'>Next Step</span>
-          <ArrowRight2 size={17} />
-        </button>
       </div>
     </>
   )

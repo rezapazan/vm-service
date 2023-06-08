@@ -10,21 +10,24 @@ export type Type = {
   version: string
 }
 
+type Step = 0 | 1 | 2 | 3 | 4 | 5
+
 export type Instance = {
   location: Location
   type: Type
-  step: 0 | 1 | 2 | 3 | 4 | 5
+  step: Step
 }
 
 export type InstanceActions =
   | {
       type: 'SET_TYPE'
-      payload: Type & { step: 2 }
+      payload: Type
     }
   | {
       type: 'SET_Location'
-      payload: Location & { step: 1 }
+      payload: Location
     }
+  | { type: 'SET_STEP'; payload: { step: Step } }
   | {
       type: 'RESET'
     }

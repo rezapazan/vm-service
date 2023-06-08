@@ -1,6 +1,8 @@
 import Sidebar from '@/app/components/Sidebar'
-import '../styles/globals.scss'
 import Navbar from '@/app/components/Navbar'
+import { ToastContainer } from 'react-toastify'
+import '../styles/globals.scss'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const metadata = {
   title: 'abrNOC VM Dashboard',
@@ -21,6 +23,18 @@ export default function RootLayout({
         <div className='flex h-full w-full'>
           <Sidebar />
           {children}
+          <ToastContainer
+            position='bottom-center'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme='light'
+          />
         </div>
       </body>
     </html>

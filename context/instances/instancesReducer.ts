@@ -6,11 +6,12 @@ export const InstanceReducer: React.Reducer<Instance, InstanceActions> = (
   action
 ): Instance => {
   switch (action.type) {
+    case 'SET_STEP':
+      return { ...state, step: action.payload.step }
     case 'SET_Location':
       return {
         ...state,
         location: { flag: action.payload.flag, name: action.payload.name },
-        step: action.payload.step,
       }
     case 'SET_TYPE':
       return {
@@ -20,7 +21,6 @@ export const InstanceReducer: React.Reducer<Instance, InstanceActions> = (
           name: action.payload.name,
           version: action.payload.version,
         },
-        step: action.payload.step,
       }
     case 'RESET':
       return {
