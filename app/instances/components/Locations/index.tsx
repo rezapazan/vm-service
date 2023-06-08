@@ -23,9 +23,10 @@ const Index = async () => {
       <div className='mb-[118px] grid h-80 grid-cols-4 gap-7 overflow-y-auto overflow-x-hidden pr-2 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-thumb-rounded'>
         {locations.map(location => (
           <Location
-            key={location.name}
+            key={location.id}
             name={location.name}
-            imageURL={location.flag}
+            flag={location.flag}
+            id={location.id}
           />
         ))}
       </div>

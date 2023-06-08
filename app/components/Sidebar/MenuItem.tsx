@@ -22,14 +22,6 @@ const Item = ({ name, icon, href, disabled }: SidebarItem) => {
         })
   }, [href, pathname])
 
-  useEffect(() => {
-    console.log(
-      `%c isPending =>`,
-      'background: #2ecc71;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5e',
-      isPending
-    )
-  }, [isPending])
-
   return disabled || isPending ? (
     <button
       disabled

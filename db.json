@@ -1,58 +1,72 @@
 {
   "locations": [
     {
+      "id": 1,
       "name": "Germany",
       "flag": "https://flagsapi.com/DE/flat/64.png"
     },
     {
+      "id": 2,
       "name": "Brazil",
       "flag": "https://flagsapi.com/BR/flat/64.png"
     },
     {
+      "id": 3,
       "name": "United Kingdom",
       "flag": "https://flagsapi.com/GB/flat/64.png"
     },
     {
+      "id": 4,
       "name": "United States",
       "flag": "https://flagsapi.com/US/flat/64.png"
     },
     {
+      "id": 5,
       "name": "Turkey",
       "flag": "https://flagsapi.com/TR/flat/64.png"
     },
     {
+      "id": 6,
       "name": "Canada",
       "flag": "https://flagsapi.com/CA/flat/64.png"
     },
     {
+      "id": 7,
       "name": "Australia",
       "flag": "https://flagsapi.com/AU/flat/64.png"
     },
     {
+      "id": 8,
       "name": "Germany",
       "flag": "https://flagsapi.com/DE/flat/64.png"
     },
     {
+      "id": 9,
       "name": "Brazil",
       "flag": "https://flagsapi.com/BR/flat/64.png"
     },
     {
+      "id": 10,
       "name": "United Kingdom",
       "flag": "https://flagsapi.com/GB/flat/64.png"
     },
     {
+      "id": 11,
       "name": "United States",
       "flag": "https://flagsapi.com/US/flat/64.png"
     },
     {
+      "id": 12,
       "name": "Turkey",
       "flag": "https://flagsapi.com/TR/flat/64.png"
     },
     {
+      "id": 13,
       "name": "Canada",
       "flag": "https://flagsapi.com/CA/flat/64.png"
     },
     {
+      "id": 14,
       "name": "Australia",
       "flag": "https://flagsapi.com/AU/flat/64.png"
     }

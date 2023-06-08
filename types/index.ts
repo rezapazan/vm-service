@@ -1,3 +1,2 @@
 export type { SidebarItems, SidebarItem } from './sidebar'
-export type { UseActiveLink } from './UseActiveLink'
-export type { Location } from './location'
+export type { Instance, Location, Type, InstanceActions } from './instances'
