@@ -1,9 +1,23 @@
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useState, useTransition } from 'react'
 
 const Location = ({ name, imageURL }: { name: string; imageURL: string }) => {
+  const [selectedClassName, setSelectedClassName] = useState<string>('')
+  const [, startTransition] = useTransition()
+
+  const clickHandler = () => {
+    startTransition(() => {
+      setSelectedClassName('border-[#2C5EFF] border-4')
+    })
+  }
+
   return (
-    <div className='flex h-32 w-60 flex-col items-center justify-center rounded-[7px] bg-white'>
+    <button
+      onClick={clickHandler}
+      className={`${selectedClassName} flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white hover:border-4 hover:border-[#2C5EFF]`}
+    >
       {/* TODO: make images round */}
       <div className='w-14 rounded-full'>
         <Image
@@ -14,7 +28,7 @@ const Location = ({ name, imageURL }: { name: string; imageURL: string }) => {
         />
       </div>
       <span className='font-grotesk text-sm font-bold'>{name}</span>
-    </div>
+    </button>
   )
 }
 

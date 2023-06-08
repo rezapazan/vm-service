@@ -5,7 +5,8 @@ import { Location as LocationType } from '@/types'
 
 const getLocations = async () => {
   const locations = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/locations'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/locations',
+    { next: { revalidate: 60 } }
   )
 
   return locations.json()

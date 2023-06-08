@@ -1,14 +1,36 @@
 'use client'
 
-import { useActiveLink } from '@/hooks'
+// import { useActiveLink } from '@/hooks'
 import { SidebarItem } from '@/types'
 import Link from 'next/link'
-import React from 'react'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useState, useTransition } from 'react'
 
 const Item = ({ name, icon, href, disabled }: SidebarItem) => {
-  const activeClassName = useActiveLink(href)
+  // TODO: make this logic a hook?
+  const pathname = usePathname()
+  const [isPending, startTransition] = useTransition()
+  const [activeClassName, setActiveClassName] = useState<string>('')
 
-  return disabled ? (
+  useEffect(() => {
+    pathname === href
+      ? startTransition(() => {
+          setActiveClassName('bg-[#2C5EFF] text-white')
+        })
+      : startTransition(() => {
+          setActiveClassName('bg-transparent text-[#0D2D51]')
+        })
+  }, [href, pathname])
+
+  useEffect(() => {
+    console.log(
+      `%c isPending =>`,
+      'background: #2ecc71;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5e',
+      isPending
+    )
+  }, [isPending])
+
+  return disabled || isPending ? (
     <button
       disabled
       className={`mb-1 flex h-10 w-full items-center rounded px-[22px] font-plex text-sm font-medium text-[#E3E4E6]`}
