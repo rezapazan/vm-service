@@ -17,7 +17,7 @@ const InstancesLayout = ({ children }: PropsWithChildren) => {
 
   return (
     <main className='w-full'>
-      <div className='px-[70px] py-[50px]'>
+      <div className='px-[70px] py-11'>
         <Stepper />
         {children}
         <div
@@ -25,14 +25,14 @@ const InstancesLayout = ({ children }: PropsWithChildren) => {
         >
           <button
             onClick={prevStepHandler}
-            className={`flex h-full w-32 items-center justify-center rounded bg-[#FAC802]`}
+            className={`flex h-full w-32 items-center justify-center rounded bg-yellow-primary`}
           >
             <ArrowLeft2 size={12} />
             <span className='ml-1'>Prev Step</span>
           </button>
           <button
             onClick={nextStepHandler}
-            className='flex h-full w-32 items-center justify-center rounded bg-[#FAC802]'
+            className='flex h-full w-32 items-center justify-center rounded bg-yellow-primary'
           >
             <span className='mr-1'>Next Step</span>
             <ArrowRight2 size={12} />

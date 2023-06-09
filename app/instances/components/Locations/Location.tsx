@@ -1,10 +1,10 @@
 'use client'
 
-import { Location } from '@/types'
+import { InstanceLocation } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 
-const Location = ({ name, flag, id }: Location) => {
+const Location = ({ name, flag, id }: InstanceLocation) => {
   const selectHandler = () => {
     console.log('CLICKED')
   }
@@ -12,7 +12,7 @@ const Location = ({ name, flag, id }: Location) => {
   return (
     <button
       onClick={selectHandler}
-      className={`flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white hover:border-4 hover:border-[#2C5EFF]`}
+      className={`flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white`}
     >
       {/* TODO: make images round */}
       <div className='w-14 rounded-full'>
@@ -23,7 +23,7 @@ const Location = ({ name, flag, id }: Location) => {
           height={64}
         />
       </div>
-      <span className='font-grotesk text-sm font-bold'>{name}</span>
+      <h4 className='font-grotesk text-sm font-bold'>{name}</h4>
     </button>
   )
 }

@@ -1,2 +1,7 @@
 export type { SidebarItems, SidebarItem } from './sidebar'
-export type { Instance, Location, Type, InstanceActions } from './instances'
+export type {
+  Instance,
+  InstanceLocation,
+  InstanceType,
+  InstanceActions,
+} from './instances'

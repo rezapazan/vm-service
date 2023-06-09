@@ -13,17 +13,17 @@ const SupportItem = ({ name, icon, href }: SidebarItem) => {
   useEffect(() => {
     pathname === href
       ? startTransition(() => {
-          setActiveClassName('bg-[#2C5EFF] text-white')
+          setActiveClassName('bg-blue-primary text-white')
         })
       : startTransition(() => {
-          setActiveClassName('bg-transparent text-[#0D2D51]')
+          setActiveClassName('bg-transparent text-blue-text')
         })
   }, [href, pathname])
 
   return isPending ? (
     <button
       disabled
-      className={`mb-1 flex h-10 w-full items-center rounded px-[22px] font-plex text-sm font-medium text-[#E3E4E6]`}
+      className={`mb-1 flex h-10 w-full items-center rounded px-[22px] font-plex text-sm font-medium text-gray-disabled`}
     >
       {icon}
       <span className='ml-3'>{name}</span>
@@ -31,7 +31,7 @@ const SupportItem = ({ name, icon, href }: SidebarItem) => {
   ) : (
     <Link
       href={href}
-      className={`${activeClassName} mb-2 flex h-10 items-center rounded border border-[#E8E9EB] px-[22px] hover:bg-[#2C5EFF] hover:text-white`}
+      className={`${activeClassName} mb-2 flex h-10 items-center rounded border border-gray-button-border px-[22px] hover:bg-blue-primary hover:text-white`}
     >
       {icon}
       <span className='ml-3'>{name}</span>

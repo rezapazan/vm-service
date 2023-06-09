@@ -1,31 +1,34 @@
-export type Location = {
+import { StaticImageData } from 'next/image'
+
+export type InstanceLocation = {
   id: number
   name: string
   flag: string
 }
 
-export type Type = {
+export type InstanceType = {
+  id: number
   name: string
-  logo: string
-  version: string
+  logo: string | StaticImageData
+  versions: string[]
 }
 
 type Step = 0 | 1 | 2 | 3 | 4 | 5
 
 export type Instance = {
-  location: Location
-  type: Type
+  location: InstanceLocation
+  type: InstanceType
   step: Step
 }
 
 export type InstanceActions =
   | {
       type: 'SET_TYPE'
-      payload: Type
+      payload: InstanceType
     }
   | {
       type: 'SET_LOCATION'
-      payload: Location
+      payload: InstanceLocation
     }
   | { type: 'SET_STEP'; payload: { step: Step } }
   | {

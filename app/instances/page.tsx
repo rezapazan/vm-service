@@ -1,8 +1,8 @@
 import React from 'react'
-import Locations from './components/Locations'
+import Types from './components/Types'
 
 const Page = () => {
-  return <Locations />
+  return <Types />
 }
 
 export default Page
