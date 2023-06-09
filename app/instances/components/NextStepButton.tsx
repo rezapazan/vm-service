@@ -29,7 +29,7 @@ const NextStepButton = () => {
   return (
     <button
       onClick={nextStepHandler}
-      className='flex h-full w-32 items-center justify-center rounded bg-yellow-primary'
+      className='flex h-full w-32 items-center justify-center rounded bg-yellow-primary hover:bg-blue-text hover:text-white'
     >
       <span className='mr-1'>Next Step</span>
       <ArrowRight2 size={12} />

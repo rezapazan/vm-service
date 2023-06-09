@@ -20,7 +20,7 @@ const PrevStepButton = () => {
   return (
     <button
       onClick={prevStepHandler}
-      className={`flex h-full w-32 items-center justify-center rounded bg-yellow-primary`}
+      className={`flex h-full w-32 items-center justify-center rounded bg-yellow-primary hover:bg-blue-text hover:text-white`}
     >
       <ArrowLeft2 size={12} />
       <span className='ml-1'>Prev Step</span>

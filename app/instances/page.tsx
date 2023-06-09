@@ -21,7 +21,7 @@ const Page = () => {
 
   return (
     <>
-      {/* {instance.step === 2 ? <Types /> : <></>} */}
+      {/* {true ? <Types /> : <Locations />} */}
       <div
         className={`${
           instance.step === 1 ? 'justify-end' : 'justify-between'
