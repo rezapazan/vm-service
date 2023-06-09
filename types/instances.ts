@@ -13,7 +13,7 @@ export type InstanceType = {
   versions: { id: number; version: string }[]
 }
 
-export type Step = 0 | 1 | 2 | 3 | 4 | 5
+export type Step = 1 | 2 | 3 | 4 | 5
 
 export type Instance = {
   location: InstanceLocation

@@ -1,8 +1,10 @@
+'use client'
+
 import { Instance, InstanceActions } from '@/types'
 import { Dispatch, createContext, useContext } from 'react'
 
 export const instanceInitialState: Instance = {
-  step: 0,
+  step: 1,
   type: {
     id: 0,
     logo: '',

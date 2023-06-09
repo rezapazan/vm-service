@@ -1,6 +1,5 @@
 import Sidebar from '@/app/components/Sidebar'
 import Navbar from '@/app/components/Navbar'
-import InstanceProvider from '@/context/instance/instanceProvider'
 import '../styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -22,7 +21,7 @@ export default function RootLayout({
         <Navbar />
         <div className='flex h-full w-full'>
           <Sidebar />
-          <InstanceProvider>{children}</InstanceProvider>
+          {children}
         </div>
       </body>
     </html>

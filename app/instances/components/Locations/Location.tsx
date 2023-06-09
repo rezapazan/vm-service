@@ -10,12 +10,15 @@ const Location = ({ name, flag, id }: InstanceLocation) => {
 
   const selectHandler = () => {
     dispatch({ type: 'SET_LOCATION', payload: { name, flag, id } })
+    console.log(instance)
   }
 
   return (
     <button
       onClick={selectHandler}
-      className={`flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white`}
+      className={`${
+        instance.location.id === id ? 'border-4 border-blue-primary' : ''
+      } flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white`}
     >
       {/* TODO: make images round */}
       <div className='w-14 rounded-full'>
