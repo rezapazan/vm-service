@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Slide, ToastContainer } from 'react-toastify'
 import { useInstance } from '@/context/instance/instanceContext'
 import PrevStepButton from './components/PrevStepButton'
@@ -8,11 +8,40 @@ import NextStepButton from './components/NextStepButton'
 import Views from './views'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { getLocations, getTypes } from '@/api/instances'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      cacheTime: 5 * 60 * 1000,
+      staleTime: 1 * 60 * 1000,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
+
+// TODO: clean this part
+const prefetchLocations = async () => {
+  await queryClient.prefetchQuery({
+    queryKey: ['instanceLocations'],
+    queryFn: getLocations,
+  })
+}
+
+const prefetchTypes = async () => {
+  await queryClient.prefetchQuery({
+    queryKey: ['instanceTypes'],
+    queryFn: getTypes,
+  })
+}
 
 const Page = () => {
   const [instance] = useInstance()
+
+  useEffect(() => {
+    prefetchLocations()
+    prefetchTypes()
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>

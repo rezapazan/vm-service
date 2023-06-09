@@ -5,20 +5,11 @@ import Type from './Type'
 import { InstanceType } from '@/types'
 import axios from '@/utils/axios'
 import { useQuery } from '@tanstack/react-query'
-
-const getTypes = async () => {
-  const locations = await axios.get(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/types'
-  )
-
-  return locations.data as InstanceType[]
-}
+import { getTypes } from '@/api/instances'
+import { useInstanceTypesQuery } from '@/hooks/useInstanceTypesQuery'
 
 const Index = () => {
-  const { data, isLoading, isFetching, error } = useQuery({
-    queryKey: ['instanceTypes'],
-    queryFn: () => getTypes(),
-  })
+  const { data, isLoading, isFetching, error } = useInstanceTypesQuery()
 
   return (
     <>

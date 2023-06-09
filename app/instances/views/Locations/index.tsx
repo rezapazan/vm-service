@@ -2,23 +2,10 @@
 
 import React from 'react'
 import Location from './Location'
-import { InstanceLocation } from '@/types'
-import axios from '@/utils/axios'
-import { useQuery } from '@tanstack/react-query'
-
-const getLocations = async () => {
-  const locations = await axios.get(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/locations'
-  )
-
-  return locations.data as InstanceLocation[]
-}
+import { useInstanceLocationsQuery } from '@/hooks/useInstanceLocationsQuery'
 
 const Index = () => {
-  const { data, isLoading, isFetching, error } = useQuery({
-    queryKey: ['instanceLocations'],
-    queryFn: () => getLocations(),
-  })
+  const { data, isLoading, isFetching, error } = useInstanceLocationsQuery()
 
   return (
     <>
