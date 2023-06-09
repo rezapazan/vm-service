@@ -38,7 +38,6 @@ const menuItems: SidebarItems = [
   },
 ]
 
-// TODO: make the an AIP call
 const controlItems: SidebarItems = [
   {
     disabled: false,
