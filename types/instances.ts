@@ -8,9 +8,9 @@ export type InstanceLocation = {
 
 export type InstanceType = {
   id: number
-  name: string
+  os: string
   logo: string | StaticImageData
-  versions: string[]
+  versions: { id: number; version: string }[]
 }
 
 type Step = 0 | 1 | 2 | 3 | 4 | 5

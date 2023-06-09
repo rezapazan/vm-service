@@ -1,4 +1,52 @@
 {
+  "types": [
+    {
+      "id": 1,
+      "os": "ubuntu",
+      "versions": [
+        {
+          "id": 1,
+          "version": "23.04"
+        },
+        {
+          "id": 2,
+          "version": "22.04.2"
+        },
+        {
+          "id": 3,
+          "version": "18.04"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "os": "windows",
+      "versions": [
+        {
+          "id": 1,
+          "version": "11"
+        },
+        {
+          "id": 2,
+          "version": "10"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "os": "Fedora",
+      "versions": [
+        {
+          "id": 1,
+          "version": "Workstation 38"
+        },
+        {
+          "id": 2,
+          "version": "Workstation 37"
+        }
+      ]
+    }
+  ],
   "locations": [
     {
       "id": 1,
