@@ -16,9 +16,15 @@ const NextStepButton = () => {
           : toast.error('Please select a location.')
         return
       case 2:
-        instance.type.id !== 0
-          ? dispatch({ type: 'SET_STEP', payload: 3 })
-          : toast.error('Please Select a type.')
+        if (instance.type.id !== 0) {
+          if (instance.type.version.length > 0) {
+            dispatch({ type: 'SET_STEP', payload: 3 })
+          } else {
+            toast.error('Please select a version.')
+          }
+        } else {
+          toast.error('Please Select a type.')
+        }
         return
       default:
         return

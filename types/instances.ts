@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image'
 
+type Logo = string | StaticImageData
+
 export type InstanceLocation = {
   id: number
   name: string
@@ -9,8 +11,15 @@ export type InstanceLocation = {
 export type InstanceType = {
   id: number
   os: string
-  logo: string | StaticImageData
+  logo: Logo
   versions: { id: number; version: string }[]
+}
+
+export type InstanceSelectedType = {
+  id: number
+  os: string
+  logo: Logo
+  version: string
 }
 
 export type Step = 1 | 2 | 3 | 4 | 5
@@ -21,20 +30,13 @@ export type Instance = {
   step: Step
 }
 
-export type InstanceActions = {
-  type: 'SET_TYPE' | 'SET_LOCATION' | 'SET_STEP'
-  payload: Step | InstanceLocation | InstanceType
+export type InstanceState = {
+  location: InstanceLocation
+  type: InstanceSelectedType
+  step: Step
 }
 
-// | {
-//     type: 'SET_TYPE'
-//     payload: InstanceType
-//   }
-// | {
-//     type: 'SET_LOCATION'
-//     payload: InstanceLocation
-//   }
-// | { type: 'SET_STEP'; payload: { step: Step } }
-// | {
-//     type: 'RESET'
-//   }
+export type InstanceActions = {
+  type: 'SET_TYPE' | 'SET_LOCATION' | 'SET_STEP'
+  payload: Step | InstanceLocation | InstanceSelectedType
+}

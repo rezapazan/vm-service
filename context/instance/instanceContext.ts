@@ -1,15 +1,16 @@
 'use client'
 
-import { Instance, InstanceActions } from '@/types'
+import { InstanceActions } from '@/types'
+import { InstanceState } from '@/types/instances'
 import { Dispatch, createContext, useContext } from 'react'
 
-export const instanceInitialState: Instance = {
+export const instanceInitialState: InstanceState = {
   step: 1,
   type: {
     id: 0,
     logo: '',
     os: '',
-    versions: [],
+    version: '',
   },
   location: {
     flag: '',
@@ -19,7 +20,7 @@ export const instanceInitialState: Instance = {
 }
 
 export const InstanceContext = createContext<
-  [Instance, Dispatch<InstanceActions>]
+  [InstanceState, Dispatch<InstanceActions>]
 >([instanceInitialState, () => {}])
 
 export const useInstance = () => useContext(InstanceContext)

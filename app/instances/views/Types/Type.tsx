@@ -2,21 +2,31 @@
 
 import { InstanceType } from '@/types'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import UbuntuLogo from '@/assets/images/Ubuntu.png'
 import { TickCircle } from 'iconsax-react'
 import { useInstance } from '@/context/instance/instanceContext'
 
 const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
   const [instance, dispatch] = useInstance()
+  const [selectedVersion, setSelectedVersion] = useState<string>('')
 
-  const selectHandler = () => {
-    dispatch({ type: 'SET_TYPE', payload: { os, logo, versions, id } })
+  const onClickHandler = () => {
+    dispatch({
+      type: 'SET_TYPE',
+      payload: { os, logo, version: selectedVersion, id },
+    })
+  }
+
+  const onVersionSelectHandler = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedVersion(event.target.value)
   }
 
   return (
     <button
-      onClick={selectHandler}
+      onClick={onClickHandler}
       className={`${
         instance.type.id === id ? 'border-4 border-blue-primary' : ''
       } flex h-44 w-60 flex-col items-center rounded-xl bg-white py-4`}
@@ -40,6 +50,8 @@ const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
       </div>
       {/* TODO: Complete Styles */}
       <select
+        value={selectedVersion}
+        onChange={event => onVersionSelectHandler(event)}
         defaultValue={'default'}
         className='h-8 w-36 rounded border border-gray-disabled px-5 font-plex text-xs text-blue-text focus:border-2 focus:border-blue-primary'
       >
