@@ -8,14 +8,6 @@ import Types from './Types'
 const ViewChanger = () => {
   const [instance] = useInstance()
 
-  useEffect(() => {
-    console.log(
-      `%c instance =>`,
-      'background: #ffe900; border-radius: 0.5em;color: #000;font-weight: bold;padding: 2px 0.5em',
-      instance
-    )
-  }, [instance])
-
   return instance.step === 1 ? (
     <Locations />
   ) : instance.step === 2 ? (

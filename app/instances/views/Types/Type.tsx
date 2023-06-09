@@ -1,3 +1,5 @@
+'use client'
+
 import { InstanceType } from '@/types'
 import Image from 'next/image'
 import React from 'react'

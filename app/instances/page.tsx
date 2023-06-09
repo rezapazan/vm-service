@@ -1,27 +1,22 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Slide, ToastContainer } from 'react-toastify'
 import { useInstance } from '@/context/instance/instanceContext'
-import Locations from './views/Locations'
-import Types from './views/Types'
 import PrevStepButton from './components/PrevStepButton'
 import NextStepButton from './components/NextStepButton'
+import Views from './views'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+const queryClient = new QueryClient()
 
 const Page = () => {
   const [instance] = useInstance()
 
-  useEffect(() => {
-    console.log(
-      `%c instance =>`,
-      'background: #e70000;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em',
-      instance
-    )
-  }, [instance])
-
   return (
-    <>
-      {/* {true ? <Types /> : <Locations />} */}
+    <QueryClientProvider client={queryClient}>
+      <Views />
       <div
         className={`${
           instance.step === 1 ? 'justify-end' : 'justify-between'
@@ -43,7 +38,8 @@ const Page = () => {
         theme='light'
         transition={Slide}
       />
-    </>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   )
 }
 

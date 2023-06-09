@@ -1,19 +1,24 @@
+'use client'
+
 import React from 'react'
 import Location from './Location'
 import { InstanceLocation } from '@/types'
+import axios from '@/utils/axios'
+import { useQuery } from '@tanstack/react-query'
 
-// TODO: Make Client-Side API Calss using react-query & axios
 const getLocations = async () => {
-  const locations = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/locations',
-    { next: { revalidate: 10 } }
+  const locations = await axios.get(
+    'https://my-json-server.typicode.com/rezapazan/vm-service/locations'
   )
 
-  return locations.json()
+  return locations.data as InstanceLocation[]
 }
 
-const Index = async () => {
-  const locations: InstanceLocation[] = await getLocations()
+const Index = () => {
+  const { data, isLoading, isFetching, error } = useQuery({
+    queryKey: ['instanceLocations'],
+    queryFn: () => getLocations(),
+  })
 
   return (
     <>
@@ -21,14 +26,22 @@ const Index = async () => {
         Instance Location
       </h2>
       <div className='mb-28 grid h-[293px] grid-cols-4 gap-7 overflow-y-auto overflow-x-hidden pr-2 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-thumb-rounded'>
-        {locations.map(location => (
-          <Location
-            key={location.id}
-            name={location.name}
-            flag={location.flag}
-            id={location.id}
-          />
-        ))}
+        {isLoading || isFetching ? (
+          <p className='font-grotesk text-lg font-bold'>Loading...</p>
+        ) : data ? (
+          data.map(location => (
+            <Location
+              key={location.id}
+              name={location.name}
+              flag={location.flag}
+              id={location.id}
+            />
+          ))
+        ) : error ? (
+          <p>There was an error!!</p>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   )

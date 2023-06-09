@@ -11,10 +11,9 @@ const NextStepButton = () => {
   const nextStepHandler = (): void => {
     switch (instance.step) {
       case 1:
-        // instance.location.id !== 0
-        //   ? dispatch({ type: 'SET_STEP', payload: 2 })
-        //   : toast.error('Please select a location.')
-        dispatch({ type: 'SET_STEP', payload: 2 })
+        instance.location.id !== 0
+          ? dispatch({ type: 'SET_STEP', payload: 2 })
+          : toast.error('Please select a location.')
         return
       case 2:
         instance.type.id !== 0
