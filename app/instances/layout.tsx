@@ -1,18 +1,49 @@
 'use client'
 
 import { ArrowLeft2, ArrowRight2 } from 'iconsax-react'
-import React, { PropsWithChildren } from 'react'
-import { Bounce, Slide, ToastContainer, toast } from 'react-toastify'
+import React, { PropsWithChildren, useEffect } from 'react'
+import { Slide, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Stepper from './components/Stepper'
+import { useInstance } from '@/context/instance/instanceContext'
 
 const InstancesLayout = ({ children }: PropsWithChildren) => {
+  const [instance, dispatch] = useInstance()
+
+  useEffect(() => {
+    console.log(
+      `%c instance =>`,
+      'background: #2ecc71;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5e',
+      instance
+    )
+  }, [instance])
+
   const nextStepHandler = (): void => {
-    toast('Next')
+    switch (instance.step) {
+      case 0:
+        // instance.location.id !== 0
+        //   ? dispatch({ type: 'SET_STEP', payload: 1 })
+        //   : toast.error('Please select a location.')
+        dispatch({ type: 'SET_STEP', payload: 1 })
+        return
+      case 1:
+        instance.type.id !== 0
+          ? dispatch({ type: 'SET_STEP', payload: 2 })
+          : toast.error('Please Select a type.')
+        return
+      default:
+        return
+    }
   }
 
   const prevStepHandler = () => {
-    toast('Prev')
+    switch (instance.step) {
+      case 1:
+        dispatch({ type: 'SET_STEP', payload: 0 })
+        return
+      default:
+        return
+    }
   }
 
   return (

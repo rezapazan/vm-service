@@ -1,12 +1,15 @@
 'use client'
 
+import { useInstance } from '@/context/instance/instanceContext'
 import { InstanceLocation } from '@/types'
 import Image from 'next/image'
 import React from 'react'
 
 const Location = ({ name, flag, id }: InstanceLocation) => {
+  const [instance, dispatch] = useInstance()
+
   const selectHandler = () => {
-    console.log('CLICKED')
+    dispatch({ type: 'SET_LOCATION', payload: { name, flag, id } })
   }
 
   return (

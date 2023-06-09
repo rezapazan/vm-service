@@ -2,6 +2,7 @@ import React from 'react'
 import Location from './Location'
 import { InstanceLocation } from '@/types'
 
+// TODO: Make Client-Side API Calss using react-query & axios
 const getLocations = async () => {
   const locations = await fetch(
     'https://my-json-server.typicode.com/rezapazan/vm-service/locations',

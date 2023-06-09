@@ -1,8 +1,9 @@
 import React from 'react'
 import Types from './components/Types'
+import Locations from './components/Locations'
 
 const Page = () => {
-  return <Types />
+  return <Locations />
 }
 
 export default Page

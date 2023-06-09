@@ -5,3 +5,4 @@ export type {
   InstanceType,
   InstanceActions,
 } from './instances'
+export type { ILSService } from './LocalStorageService'
