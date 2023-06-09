@@ -1,18 +1,10 @@
 'use client'
 
 import { useInstance } from '@/context/instance/instanceContext'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Stepper = () => {
   const [instance] = useInstance()
-
-  useEffect(() => {
-    console.log(
-      `%c instance =>`,
-      'background: #2ecc71;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5e',
-      instance
-    )
-  }, [instance])
 
   return (
     <div className='m-auto mb-12 flex h-[47px] w-3/4 items-start justify-between text-center font-grotesk text-xs font-bold text-[#747577]'>

@@ -10,7 +10,6 @@ const Location = ({ name, flag, id }: InstanceLocation) => {
 
   const selectHandler = () => {
     dispatch({ type: 'SET_LOCATION', payload: { name, flag, id } })
-    console.log(instance)
   }
 
   return (

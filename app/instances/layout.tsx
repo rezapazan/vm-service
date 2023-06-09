@@ -1,7 +1,5 @@
 import React, { PropsWithChildren } from 'react'
 import Stepper from './components/Stepper'
-import PrevStepButton from './components/PrevStepButton'
-import NextStepButton from './components/NextStepButton'
 import InstanceProvider from '@/context/instance/instanceProvider'
 
 const InstancesLayout = ({ children }: PropsWithChildren) => {
@@ -11,12 +9,6 @@ const InstancesLayout = ({ children }: PropsWithChildren) => {
         <InstanceProvider>
           <Stepper />
           {children}
-          <div
-            className={`flex h-10 items-center justify-between font-plex text-sm font-medium`}
-          >
-            <PrevStepButton />
-            <NextStepButton />
-          </div>
         </InstanceProvider>
       </div>
     </main>
