@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js 13.x](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Run The App Locally
 
 First, run the development server:
 
 ```bash
-npm run dev
+$ npm run dev
 # or
-yarn dev
+$ yarn dev
 # or
-pnpm dev
+$ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**you can change the port number if needed using `-p [port numb]` switch.**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+$ yarn dev -p 3001
+```
+## Deployed on Liara
 
-## Learn More
+Check out the deployed version on [Liara](https://liara.ir/) for a more realistic analysis on the link below:
 
-To learn more about Next.js, take a look at the following resources:
+[https://vm-service.iran.liara.run](https://vm-service.iran.liara.run/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features & Functionality
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   This app uses `eslint` & `prettier` as well as `TypeScript` to validate & format the code. A `husky` pre-commit hook is also configured alongside with `lint-staged` in order to automate the validation process before each commit to the git.
 
-## Deploy on Vercel
+-   The stepper component is personally developed, and is in sync with changes of the state. It's not two way bounded so you cannot click on the steps
+and change the current state. The steps' state is managed using `Context API`. As a future feature to be developed, we can use `localStorage` to manage the data in all 5 steps, so if the users click on the refresh button they don't lose progress.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   Data fetching is done using `axios` & `react-query` alongside with the new `server-side components` of Next.js 13, but there is a compatiblity problem with `hydration` in Next.js 13 as it is implemented in this project using `react-query` for the main page heavy load of data.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Challenges
+
+One of the most frustrating challenges during development, was the state management...
