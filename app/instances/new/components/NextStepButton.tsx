@@ -12,29 +12,16 @@ const NextStepButton = ({ href }: { href: string }) => {
   const [disabled, setDisabled] = useState<boolean>(true)
 
   useEffect(() => {
-    console.log(
-      `%c instance =>`,
-      'background: #2ecc71;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5e',
-      instance
-    )
-  }, [instance])
-
-  useEffect(() => {
-    if (pathname.includes('location') && instance.location.id !== 0) {
+    if (
+      (pathname.includes('location') && instance.location.id !== 0) ||
+      (pathname.includes('type') && instance.type.id !== 0)
+    ) {
       console.log('verified')
       setDisabled(false)
     } else {
       console.log('Unverified')
     }
   }, [instance.location, instance.type, pathname])
-
-  useEffect(() => {
-    console.log(
-      `%c disabled =>`,
-      'background: #ffe900; border-radius: 0.5em;color: #000;font-weight: bold;padding: 2px 0.5em',
-      disabled
-    )
-  }, [disabled])
 
   return disabled ? (
     <button
