@@ -13,17 +13,14 @@ export type InstanceType = {
   versions: { id: number; version: string }[]
 }
 
-export type Step = 1 | 2 | 3 | 4 | 5
-
 export type Instance = {
   location: InstanceLocation
   type: InstanceType
-  step: Step
 }
 
 export type InstanceActions = {
-  type: 'SET_TYPE' | 'SET_LOCATION' | 'SET_STEP'
-  payload: Step | InstanceLocation | InstanceType
+  type: 'SET_TYPE' | 'SET_LOCATION'
+  payload: InstanceLocation | InstanceType
 }
 
 // | {

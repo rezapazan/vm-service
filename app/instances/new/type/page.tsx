@@ -1,17 +1,18 @@
 import React from 'react'
-import Type from './Type'
 import { InstanceType } from '@/types'
+import Type from './components/Type'
+import NextStepButton from '../components/NextStepButton'
+import PrevStepButton from '../components/PrevStepButton'
 
 const getInstanceTypes = async () => {
   const types = await fetch(
     'https://my-json-server.typicode.com/rezapazan/vm-service/types',
     { next: { revalidate: 10 } }
   )
-
   return types.json()
 }
 
-const Index = async () => {
+const InstanceType = async () => {
   const instanceTypes: InstanceType[] = await getInstanceTypes()
 
   return (
@@ -30,8 +31,14 @@ const Index = async () => {
           />
         ))}
       </div>
+      <div
+        className={`flex h-10 items-center justify-between font-plex text-sm font-medium`}
+      >
+        <PrevStepButton href='/instances/new/location' />
+        <NextStepButton href='#' />
+      </div>
     </>
   )
 }
 
-export default Index
+export default InstanceType

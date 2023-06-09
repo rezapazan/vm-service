@@ -1,18 +1,17 @@
 import React from 'react'
-import Location from './Location'
 import { InstanceLocation } from '@/types'
+import Location from './components/Location'
+import NextStepButton from '../components/NextStepButton'
 
-// TODO: Make Client-Side API Calss using react-query & axios
 const getLocations = async () => {
   const locations = await fetch(
     'https://my-json-server.typicode.com/rezapazan/vm-service/locations',
     { next: { revalidate: 10 } }
   )
-
   return locations.json()
 }
 
-const Index = async () => {
+const InstanceLocation = async () => {
   const locations: InstanceLocation[] = await getLocations()
 
   return (
@@ -30,8 +29,13 @@ const Index = async () => {
           />
         ))}
       </div>
+      <div
+        className={`flex h-10 items-center justify-end font-plex text-sm font-medium`}
+      >
+        <NextStepButton href='/instances/new/type' />
+      </div>
     </>
   )
 }
 
-export default Index
+export default InstanceLocation

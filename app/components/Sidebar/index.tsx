@@ -14,7 +14,7 @@ const menuItems: SidebarItems = [
   },
   {
     name: 'Instances',
-    href: '/instances',
+    href: '/instances/new/location',
     icon: <Icons.AddSquare size={17} />,
     disabled: false,
   },

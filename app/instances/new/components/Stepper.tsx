@@ -1,22 +1,22 @@
 'use client'
 
-import { useInstance } from '@/context/instance/instanceContext'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const Stepper = () => {
-  const [instance] = useInstance()
+  const pathname = usePathname()
 
   return (
     <div className='m-auto mb-12 flex h-[47px] w-3/4 items-start justify-between text-center font-grotesk text-xs font-bold text-[#747577]'>
       <div className='flex w-[99px] flex-col items-center'>
         <div
           className={`mb-2 flex h-6 w-6 items-center justify-center rounded-full ${
-            instance.step === 1 ? 'bg-yellow-primary' : 'bg-[#D1EFFE]'
+            pathname.includes('location') ? 'bg-yellow-primary' : 'bg-[#D1EFFE]'
           }`}
         >
           <div
             className={`h-[13px] w-[13px] rounded-full ${
-              instance.step === 1 ? 'bg-white' : 'bg-[#52C7FC]'
+              pathname.includes('location') ? 'bg-white' : 'bg-[#52C7FC]'
             }`}
           >
             &nbsp;
@@ -30,12 +30,12 @@ const Stepper = () => {
       <div className='flex w-[99px] flex-col items-center'>
         <div
           className={`mb-2 flex h-6 w-6 items-center justify-center rounded-full ${
-            instance.step === 2 ? 'bg-yellow-primary' : 'bg-[#D1EFFE]'
+            pathname.includes('type') ? 'bg-yellow-primary' : 'bg-[#D1EFFE]'
           }`}
         >
           <div
             className={`h-[13px] w-[13px] rounded-full ${
-              instance.step === 2 ? 'bg-white' : 'bg-[#52C7FC]'
+              pathname.includes('type') ? 'bg-white' : 'bg-[#52C7FC]'
             }`}
           >
             &nbsp;
