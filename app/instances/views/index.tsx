@@ -4,6 +4,7 @@ import { useInstance } from '@/context/instance/instanceContext'
 import React, { useEffect } from 'react'
 import Locations from './Locations'
 import Types from './Types'
+import Plan from './Plan'
 
 const ViewChanger = () => {
   const [instance] = useInstance()
@@ -12,8 +13,10 @@ const ViewChanger = () => {
     <Locations />
   ) : instance.step === 2 ? (
     <Types />
+  ) : instance.step === 3 ? (
+    <Plan />
   ) : (
-    <p>New Views Are on The Way!!</p>
+    <></>
   )
 }
 

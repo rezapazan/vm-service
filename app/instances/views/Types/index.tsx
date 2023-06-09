@@ -2,10 +2,6 @@
 
 import React from 'react'
 import Type from './Type'
-import { InstanceType } from '@/types'
-import axios from '@/utils/axios'
-import { useQuery } from '@tanstack/react-query'
-import { getTypes } from '@/api/instances'
 import { useInstanceTypesQuery } from '@/hooks/useInstanceTypesQuery'
 
 const Index = () => {

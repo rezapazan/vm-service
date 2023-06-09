@@ -5,10 +5,22 @@ import Image from 'next/image'
 import React from 'react'
 import UbuntuLogo from '@/assets/images/Ubuntu.png'
 import { TickCircle } from 'iconsax-react'
+import { useInstance } from '@/context/instance/instanceContext'
 
-const Type = ({ os, logo = UbuntuLogo, versions }: InstanceType) => {
+const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
+  const [instance, dispatch] = useInstance()
+
+  const selectHandler = () => {
+    dispatch({ type: 'SET_TYPE', payload: { os, logo, versions, id } })
+  }
+
   return (
-    <button className='flex h-44 w-60 flex-col items-center rounded-xl bg-white py-4'>
+    <button
+      onClick={selectHandler}
+      className={`${
+        instance.type.id === id ? 'border-4 border-blue-primary' : ''
+      } flex h-44 w-60 flex-col items-center rounded-xl bg-white py-4`}
+    >
       <Image
         alt={os}
         src={logo}

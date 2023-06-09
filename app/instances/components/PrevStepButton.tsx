@@ -12,6 +12,8 @@ const PrevStepButton = () => {
       case 2:
         dispatch({ type: 'SET_STEP', payload: 1 })
         return
+      case 3:
+        dispatch({ type: 'SET_STEP', payload: 2 })
       default:
         return
     }
