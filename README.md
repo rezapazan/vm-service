@@ -32,8 +32,6 @@ Check out the deployed version on [Liara](https://liara.ir/) for a more realisti
 -   The stepper component is personally developed, and is in sync with changes of the state. It's not two way bounded so you cannot click on the steps
 and change the current state. The steps' state is managed using `Context API`. As a future feature to be developed, we can use `localStorage` to manage the data in all 5 steps, so if the users click on the refresh button they don't lose progress.
 
--   Data fetching is done using `axios` & `react-query` alongside with the new `server-side components` of Next.js 13, but there is a compatiblity problem with `hydration` in Next.js 13 as it is implemented in this project using `react-query` for the main page heavy load of data.
-
 ## Challenges
 
 One of the most frustrating challenges during development, was the state management...
