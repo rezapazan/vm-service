@@ -55,7 +55,7 @@ const Page = () => {
         <NextStepButton />
       </div>
       <ToastContainer
-        position='bottom-center'
+        position='top-center'
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop
@@ -64,7 +64,7 @@ const Page = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme='light'
+        theme='colored'
         transition={Slide}
       />
       <ReactQueryDevtools />
