@@ -5,21 +5,21 @@ import SupportItem from './SupportItem'
 
 const getMenuItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/menu'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar-menu'
   )
   return items.json()
 }
 
 const getSupportItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/support'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/sidebar-support'
   )
   return items.json()
 }
 
 const getControlItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/control'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/sidebar-control'
   )
   return items.json()
 }
