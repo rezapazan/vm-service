@@ -12,7 +12,7 @@ const Index = () => {
       <h2 className='mb-5 font-grotesk text-[28px] font-bold text-blue-text'>
         Instance Type
       </h2>
-      <div className='mb-28 grid h-[293px] grid-cols-4 gap-7 overflow-y-auto overflow-x-hidden pr-2 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-thumb-rounded'>
+      <div className='mb-28 grid h-[293px] grid-cols-2 gap-7 overflow-y-auto overflow-x-hidden pr-2 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-thumb-rounded xl:grid-cols-4'>
         {isLoading || isFetching ? (
           <p className='font-grotesk text-lg font-bold'>Loading...</p>
         ) : data ? (

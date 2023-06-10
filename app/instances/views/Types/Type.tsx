@@ -52,10 +52,9 @@ const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
       <select
         value={selectedVersion}
         onChange={event => onVersionSelectHandler(event)}
-        defaultValue={'default'}
         className='h-8 w-36 rounded border border-gray-disabled px-5 font-plex text-xs text-blue-text focus:border-2 focus:border-blue-primary'
       >
-        <option value='default'>Choose a Type</option>
+        <option>Select Version</option>
         {versions.map(version => (
           <option key={version.id}>{version.version}</option>
         ))}

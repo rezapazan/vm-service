@@ -1,5 +1,5 @@
 import { InstanceLocation } from '@/types'
-import axios from '@/utils/axios'
+import axios from '@/utils'
 
 export const getLocations = async () => {
   const locations = await axios.get(

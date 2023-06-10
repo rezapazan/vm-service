@@ -1,34 +1,15 @@
 'use client'
 
 import { useInstance } from '@/context/instance/instanceContext'
+import { nextStepValidator } from '@/utils'
 import { ArrowRight2 } from 'iconsax-react'
 import React from 'react'
-import { toast } from 'react-toastify'
 
 const NextStepButton = () => {
   const [instance, dispatch] = useInstance()
 
   const nextStepHandler = (): void => {
-    switch (instance.step) {
-      case 1:
-        instance.location.id !== 0
-          ? dispatch({ type: 'SET_STEP', payload: 2 })
-          : toast.error('Please select a location.')
-        return
-      case 2:
-        if (instance.type.id !== 0) {
-          if (instance.type.version.length > 0) {
-            dispatch({ type: 'SET_STEP', payload: 3 })
-          } else {
-            toast.error('Please select a version.')
-          }
-        } else {
-          toast.error('Please Select a type.')
-        }
-        return
-      default:
-        return
-    }
+    nextStepValidator(instance, dispatch)
   }
 
   return (

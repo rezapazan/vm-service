@@ -1,6 +1,7 @@
 'use client'
 
 import { useInstance } from '@/context/instance/instanceContext'
+import { prevStepValidator } from '@/utils'
 import { ArrowLeft2 } from 'iconsax-react'
 import React from 'react'
 
@@ -8,15 +9,7 @@ const PrevStepButton = () => {
   const [instance, dispatch] = useInstance()
 
   const prevStepHandler = () => {
-    switch (instance.step) {
-      case 2:
-        dispatch({ type: 'SET_STEP', payload: 1 })
-        return
-      case 3:
-        dispatch({ type: 'SET_STEP', payload: 2 })
-      default:
-        return
-    }
+    prevStepValidator(instance, dispatch)
   }
 
   return (
