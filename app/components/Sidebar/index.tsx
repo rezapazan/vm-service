@@ -12,14 +12,14 @@ const getMenuItems = async () => {
 
 const getSupportItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/sidebar-support'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar-support'
   )
   return items.json()
 }
 
 const getControlItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/sidebar-control'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar-control'
   )
   return items.json()
 }

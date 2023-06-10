@@ -40,4 +40,5 @@ const Item = ({ name, icon, href, disabled }: SidebarItem) => {
     </Link>
   )
 }
+
 export default Item

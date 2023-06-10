@@ -1,6 +1,7 @@
 'use client'
 
 import { SidebarItem } from '@/types'
+import { getIcon } from '@/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, useTransition } from 'react'
@@ -25,7 +26,7 @@ const SupportItem = ({ name, icon, href }: SidebarItem) => {
       href={href}
       className={`${activeClassName} mb-2 flex h-10 items-center rounded border border-gray-button-border px-[22px] hover:bg-blue-primary hover:text-white`}
     >
-      {icon}
+      {getIcon(icon, 17)}
       <span className='ml-3'>{name}</span>
     </Link>
   )
