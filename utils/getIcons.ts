@@ -1,28 +1,17 @@
-import {
-  AddSquare,
-  Copy,
-  DirectboxDefault,
-  DocumentText,
-  DollarCircle,
-  Home2,
-  Key,
-  MessageQuestion,
-  Messages2,
-  Wifi,
-} from 'iconsax-react'
+import * as Icons from 'iconsax-react'
 import React from 'react'
 
 const Components = {
-  Home2: Home2,
-  AddSquare: AddSquare,
-  Copy: Copy,
-  Key: Key,
-  DirectboxDefault: DirectboxDefault,
-  Wifi: Wifi,
-  DocumentText: DocumentText,
-  DollarCircle: DollarCircle,
-  Messages2: Messages2,
-  MessageQuestion: MessageQuestion,
+  Home2: Icons.Home2,
+  AddSquare: Icons.AddSquare,
+  Copy: Icons.Copy,
+  Key: Icons.Key,
+  DirectboxDefault: Icons.DirectboxDefault,
+  Wifi: Icons.Wifi,
+  DocumentText: Icons.DocumentText,
+  DollarCircle: Icons.DollarCircle,
+  Messages2: Icons.Messages2,
+  MessageQuestion: Icons.MessageQuestion,
 }
 
 export const getIcon = (icon: string, size: number) => {

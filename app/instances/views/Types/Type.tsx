@@ -28,18 +28,17 @@ const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
     <button
       onClick={onClickHandler}
       className={`${
-        instance.type.id === id ? 'border-4 border-blue-primary' : ''
-      } flex h-44 w-60 flex-col items-center rounded-xl bg-white py-4`}
+        instance.type.id === id ? 'border-blue-primary' : 'border-white'
+      } flex h-44 w-60 flex-col items-center justify-between rounded-xl border-4 bg-white py-4`}
     >
       <Image
         alt={os}
         src={logo}
         width={36}
         height={36}
-        className='mb-2'
       />
-      <h4 className='mb-3 font-grotesk text-sm font-bold'>{os}</h4>
-      <div className='mb-4 flex items-center font-plex text-[10px]'>
+      <h4 className='font-grotesk text-sm font-bold'>{os}</h4>
+      <div className='flex items-center font-plex text-[10px]'>
         <TickCircle
           size='20'
           className='mr-1 text-blue-primary'
@@ -48,11 +47,10 @@ const Type = ({ os, logo = UbuntuLogo, versions, id }: InstanceType) => {
         <span className='mr-1 font-bold'>All x64</span>
         <span className='font-normal text-gray-text'>System Type</span>
       </div>
-      {/* TODO: Complete Styles */}
       <select
         value={selectedVersion}
         onChange={event => onVersionSelectHandler(event)}
-        className='h-8 w-36 rounded border border-gray-disabled px-5 font-plex text-xs text-blue-text focus:border-2 focus:border-blue-primary'
+        className='h-8 w-36 rounded border border-gray-disabled px-5 font-plex text-xs font-bold text-gray-placeholder focus:border-2 focus:border-blue-primary focus:text-blue-text'
       >
         <option>Select Version</option>
         {versions.map(version => (
