@@ -1,19 +1,10 @@
-# Dockerfile
-
-# base image
-FROM node:20-alpine3.17
-
-# create & set working directory
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
-
-# copy source files
-COPY . /usr/src
-
-# install dependencies
+FROM node:20-alpine3.17 AS builder
+WORKDIR /app
+COPY package*.json .
 RUN npm install
-
-# start app
+COPY . .
 RUN npm run build
-EXPOSE 3000
-CMD npm run start
+
+FROM nginx:alpine3.17-slim AS prod
+COPY --chown=www-data:www-data --from=builder /app/dist /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
