@@ -1,12 +1,13 @@
 'use client'
 
 import { SidebarItem } from '@/types'
+import { getIcon } from '@/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState, useTransition } from 'react'
 
 const Item = ({ name, icon, href, disabled }: SidebarItem) => {
-  // TODO: make this logic a hook?
+  // make this logic a hook?
   const pathname = usePathname()
   const [, startTransition] = useTransition()
   const [activeClassName, setActiveClassName] = useState<string>('')
@@ -26,7 +27,7 @@ const Item = ({ name, icon, href, disabled }: SidebarItem) => {
       disabled
       className={`mb-1 flex h-10 w-full items-center rounded px-[22px] font-plex text-sm font-medium text-gray-disabled`}
     >
-      {icon}
+      {getIcon(icon, 17)}
       <span className='ml-3'>{name}</span>
     </button>
   ) : (
@@ -34,7 +35,7 @@ const Item = ({ name, icon, href, disabled }: SidebarItem) => {
       href={href}
       className={`${activeClassName} mb-1 flex h-10 w-full cursor-pointer items-center rounded px-[22px] font-plex text-sm font-medium text-blue-text hover:bg-blue-primary hover:text-white`}
     >
-      {icon}
+      {getIcon(icon, 17)}
       <span className='ml-3'>{name}</span>
     </Link>
   )

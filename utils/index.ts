@@ -3,3 +3,4 @@ export {
   nextStepValidator,
   prevStepValidator,
 } from './InstanceStepChangeValidator'
+export { getIcon } from './getIcons'

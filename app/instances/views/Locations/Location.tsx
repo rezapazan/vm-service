@@ -19,13 +19,14 @@ const Location = ({ name, flag, id }: InstanceLocation) => {
         instance.location.id === id ? 'border-4 border-blue-primary' : ''
       } flex h-32 w-60 flex-col items-center justify-center rounded-xl bg-white`}
     >
-      {/* TODO: make images round */}
-      <div className='w-14 rounded-full'>
+      <div className='relative h-16 w-16 rounded-full'>
         <Image
-          src={flag}
           alt={name}
-          width={64}
-          height={64}
+          src={flag}
+          width={4000}
+          height={3000}
+          className='absolute left-0 top-0 h-full w-full rounded-full object-cover'
+          loading='lazy'
         />
       </div>
       <h4 className='font-grotesk text-sm font-bold'>{name}</h4>

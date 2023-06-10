@@ -1,7 +1,5 @@
-import React from 'react'
-
 export type SidebarItem = {
-  icon: React.ReactNode
+  icon: string
   name: string
   href: string
   disabled: boolean

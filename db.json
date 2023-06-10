@@ -1,4 +1,36 @@
 {
+  "sidebar": [
+    {
+      "name": "Dashboard",
+      "icon": "Home2",
+      "href": "/",
+      "disabled": false
+    },
+    {
+      "name": "Instances",
+      "href": "/instances",
+      "icon": "AddSquare",
+      "disabled": false
+    },
+    {
+      "name": "Snapshots",
+      "href": "/snapshots",
+      "icon": "Copy",
+      "disabled": false
+    },
+    {
+      "name": "SSH Keys",
+      "icon": "Key",
+      "href": "/ssh-keys",
+      "disabled": false
+    },
+    {
+      "name": "Volume",
+      "icon": "DirectboxDefault",
+      "href": "/volume",
+      "disabled": true
+    }
+  ],
   "types": [
     {
       "id": 1,

@@ -3,6 +3,7 @@ import Step from './Step'
 import { StepperStep } from '@/types/Stepper'
 import Separator from './Separator'
 
+// Is this an API call?
 const steps: StepperStep[] = [
   {
     step: 1,
