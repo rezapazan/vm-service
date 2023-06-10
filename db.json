@@ -1,36 +1,72 @@
 {
-  "sidebar": [
-    {
-      "name": "Dashboard",
-      "icon": "Home2",
-      "href": "/",
-      "disabled": false
-    },
-    {
-      "name": "Instances",
-      "href": "/instances",
-      "icon": "AddSquare",
-      "disabled": false
-    },
-    {
-      "name": "Snapshots",
-      "href": "/snapshots",
-      "icon": "Copy",
-      "disabled": false
-    },
-    {
-      "name": "SSH Keys",
-      "icon": "Key",
-      "href": "/ssh-keys",
-      "disabled": false
-    },
-    {
-      "name": "Volume",
-      "icon": "DirectboxDefault",
-      "href": "/volume",
-      "disabled": true
-    }
-  ],
+  "sidebar": {
+    "control": [
+      {
+        "disabled": false,
+        "href": "/networking",
+        "name": "Networking",
+        "icon": "Wifi"
+      },
+      {
+        "disabled": false,
+        "href": "/report",
+        "name": "Report",
+        "icon": "DocumentText"
+      }
+    ],
+    "support": [
+      {
+        "name": "Billing",
+        "disabled": false,
+        "href": "/billing",
+        "icon": "DollarCircle"
+      },
+      {
+        "name": "Support",
+        "disabled": false,
+        "href": "/support",
+        "icon": "Messages2"
+      },
+      {
+        "name": "Help",
+        "disabled": false,
+        "href": "/help",
+        "icon": "MessageQuestion"
+      }
+    ],
+    "menu": [
+      {
+        "name": "Dashboard",
+        "icon": "Home2",
+        "href": "/",
+        "disabled": false
+      },
+      {
+        "name": "Instances",
+        "href": "/instances",
+        "icon": "AddSquare",
+        "disabled": false
+      },
+      {
+        "name": "Snapshots",
+        "href": "/snapshots",
+        "icon": "Copy",
+        "disabled": false
+      },
+      {
+        "name": "SSH Keys",
+        "icon": "Key",
+        "href": "/ssh-keys",
+        "disabled": false
+      },
+      {
+        "name": "Volume",
+        "icon": "DirectboxDefault",
+        "href": "/volume",
+        "disabled": true
+      }
+    ]
+  },
   "types": [
     {
       "id": 1,

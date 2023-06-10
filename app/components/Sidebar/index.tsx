@@ -1,60 +1,45 @@
 import React from 'react'
 import Item from './MenuItem'
-import * as Icons from 'iconsax-react'
-import { SidebarItem, SidebarItems } from '@/types'
+import { SidebarItems } from '@/types'
 import SupportItem from './SupportItem'
 
 const getMenuItems = async () => {
   const items = await fetch(
-    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar'
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/menu'
   )
   return items.json()
 }
 
-// const controlItems: SidebarItems = [
-//   {
-//     disabled: false,
-//     href: '/networking',
-//     name: 'Networking',
-//     icon: <Icons.Wifi size={17} />,
-//   },
-//   {
-//     disabled: false,
-//     href: '/report',
-//     name: 'Report',
-//     icon: <Icons.DocumentText size={17} />,
-//   },
-// ]
+const getSupportItems = async () => {
+  const items = await fetch(
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/support'
+  )
+  return items.json()
+}
 
-// const supportItems: SidebarItems = [
-//   {
-//     name: 'Billing',
-//     disabled: false,
-//     href: '/billing',
-//     icon: <Icons.DollarCircle size={17} />,
-//   },
-//   {
-//     name: 'Support',
-//     disabled: false,
-//     href: '/support',
-//     icon: <Icons.Messages2 size={17} />,
-//   },
-//   {
-//     name: 'Help',
-//     disabled: false,
-//     href: '/help',
-//     icon: <Icons.MessageQuestion size={17} />,
-//   },
-// ]
+const getControlItems = async () => {
+  const items = await fetch(
+    'https://my-json-server.typicode.com/rezapazan/vm-service/sidebar/control'
+  )
+  return items.json()
+}
 
 const Sidebar = async () => {
-  const menuItems: SidebarItem[] = await getMenuItems()
+  const menuItemsData = getMenuItems()
+  const supportItemsData = getSupportItems()
+  const controlItemsData = getControlItems()
+
+  const [menuItems, supportItems, controlItems] = await Promise.all([
+    menuItemsData,
+    supportItemsData,
+    controlItemsData,
+  ])
 
   return (
     <aside className='fixed flex h-full w-[248px] flex-col items-start justify-between overflow-auto  border-r-2 border-gray-sidebar-border bg-white px-[30px] pb-5 pt-[75px] text-blue-text scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-200 scrollbar-thumb-rounded'>
       <div className='w-full'>
         <div className='border-b border-gray-primary-border pb-5 pt-7'>
-          {menuItems.map(item => (
+          {(menuItems as SidebarItems).map(item => (
             <Item
               name={item.name}
               key={item.name}
@@ -64,8 +49,8 @@ const Sidebar = async () => {
             />
           ))}
         </div>
-        {/* <div className='pb-5 pt-5'>
-          {controlItems.map(item => (
+        <div className='pb-5 pt-5'>
+          {(controlItems as SidebarItems).map(item => (
             <Item
               name={item.name}
               key={item.name}
@@ -74,10 +59,10 @@ const Sidebar = async () => {
               disabled={item.disabled}
             />
           ))}
-        </div> */}
+        </div>
       </div>
-      {/* <div className='w-full'>
-        {supportItems.map(item => (
+      <div className='w-full'>
+        {(supportItems as SidebarItems).map(item => (
           <SupportItem
             name={item.name}
             key={item.name}
@@ -86,7 +71,7 @@ const Sidebar = async () => {
             disabled={item.disabled}
           />
         ))}
-      </div> */}
+      </div>
     </aside>
   )
 }
