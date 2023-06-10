@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
   },
 })
 
-// TODO: clean this part
+// make this part more reusable
 const prefetchLocations = async () => {
   await queryClient.prefetchQuery({
     queryKey: ['instanceLocations'],
