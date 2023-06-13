@@ -51,11 +51,11 @@ Check out the deployed version on [Liara](https://liara.ir/) for a more realisti
 
 ## Challenges
 
-One of the most frustrating challenges during development, was the state management. I wanted to develop the steps funcionality **route-independent** as it is now, but the `dispatch` function did not send data to `reducer`. I spent 2 days figuring out the problem. :grimacing:
-
+- One of the most frustrating challenges during development, was the state management. I wanted to develop the steps funcionality **route-independent** as it is now, but the `dispatch` function did not send data to `reducer`. I spent 2 days figuring out the problem. :grimacing:
 I event tried to change the mindset & started to develop the stepper functionality route-dependent in `feature/reza/stepperRoutes` branch. The routes are like `/instances/new/[location | type | etc.]`
-
 Then I found out I was fetching data in a **client components** as it is a **server component**, so I used `react-query` to get the data in client components & the problem was solved. :man_facepalming:
+
+- Another real challenge was the dropdown select component in `/instances/types` step. Existing libraries are almost not capable of personalization & tailwind plugins e.g. headlessUI or daisyUI cause hydration problem as they are not yet optimized with server/client components of Next.js v13, so I tried the `select` HTML tag, but styling it is actually impossible.
 
 ## Libraries
 
